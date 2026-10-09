@@ -1,0 +1,19 @@
+{
+ "raw_unchanged": [
+  "inbo_gull_gps_tracking_1gb.csv",
+  "radar_site.csv",
+  "radar_species.csv",
+  "radar_track.csv"
+ ],
+ "rebuild_equal": true,
+ "notebook_cli_equal": true,
+ "idempotent": true,
+ "notebooks_fresh_kernel": [
+  "01_overview",
+  "02_cleaning"
+ ],
+ "rows": 1600000,
+ "columns": 39,
+ "final_source_cli_checked": true,
+ "final_idempotence_checked": true
+}

@@ -1,0 +1,26 @@
+[
+ {
+  "file": "inbo_gull_gps_tracking_1gb.csv",
+  "bytes": 1113762923,
+  "sha256": "0a87042e039e90c7ff16d92f732f9d26d98eec0e653b65f61f38c3c45682ef77",
+  "original_equal": true
+ },
+ {
+  "file": "radar_site.csv",
+  "bytes": 3088,
+  "sha256": "4563d863931c2db1a12b563f9b5d0ee46ba92c27881eea1ac8327307cf3ffa9c",
+  "original_equal": true
+ },
+ {
+  "file": "radar_species.csv",
+  "bytes": 11267,
+  "sha256": "3d515ac9e1370f9e87c294472c6bfd3e7514e100ba879df5188968530ad3c80d",
+  "original_equal": true
+ },
+ {
+  "file": "radar_track.csv",
+  "bytes": 40229673,
+  "sha256": "c5c7a0e5523fd5168833824cf53702fbc4148302451b9c3ba1095865592b6717",
+  "original_equal": true
+ }
+]

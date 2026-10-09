@@ -1,0 +1,332 @@
+[
+ {
+  "column": "id",
+  "dtype": "str",
+  "missing": 0,
+  "unique": 1600000,
+  "memory_bytes": 42856021,
+  "meaning": "Ключ наблюдения; основной идентификатор строки",
+  "clean_name": "id",
+  "target_type": "string[pyarrow]"
+ },
+ {
+  "column": "type",
+  "dtype": "str",
+  "missing": 0,
+  "unique": 1,
+  "memory_bytes": 20800000,
+  "meaning": "Тип записи Darwin Core; служебная характеристика",
+  "clean_name": "type",
+  "target_type": "category"
+ },
+ {
+  "column": "language",
+  "dtype": "str",
+  "missing": 0,
+  "unique": 1,
+  "memory_bytes": 16000000,
+  "meaning": "Язык метаданных; служебная характеристика",
+  "clean_name": "language",
+  "target_type": "category"
+ },
+ {
+  "column": "license",
+  "dtype": "str",
+  "missing": 0,
+  "unique": 1,
+  "memory_bytes": 91200000,
+  "meaning": "Ссылка на лицензию; условия повторного использования",
+  "clean_name": "license",
+  "target_type": "category"
+ },
+ {
+  "column": "rightsHolder",
+  "dtype": "str",
+  "missing": 0,
+  "unique": 1,
+  "memory_bytes": 19200000,
+  "meaning": "Правообладатель; происхождение набора",
+  "clean_name": "rights_holder",
+  "target_type": "category"
+ },
+ {
+  "column": "accessRights",
+  "dtype": "str",
+  "missing": 0,
+  "unique": 1,
+  "memory_bytes": 76800000,
+  "meaning": "Режим доступа к данным",
+  "clean_name": "access_rights",
+  "target_type": "category"
+ },
+ {
+  "column": "datasetID",
+  "dtype": "str",
+  "missing": 0,
+  "unique": 1,
+  "memory_bytes": 62400000,
+  "meaning": "DOI набора; идентификация источника",
+  "clean_name": "dataset_id",
+  "target_type": "category"
+ },
+ {
+  "column": "institutionCode",
+  "dtype": "str",
+  "missing": 0,
+  "unique": 1,
+  "memory_bytes": 19200000,
+  "meaning": "Код учреждения, публикующего данные",
+  "clean_name": "institution_code",
+  "target_type": "category"
+ },
+ {
+  "column": "datasetName",
+  "dtype": "str",
+  "missing": 0,
+  "unique": 1,
+  "memory_bytes": 198400000,
+  "meaning": "Название набора; описание источника",
+  "clean_name": "dataset_name",
+  "target_type": "category"
+ },
+ {
+  "column": "ownerInstitutionCode",
+  "dtype": "str",
+  "missing": 0,
+  "unique": 1,
+  "memory_bytes": 41600000,
+  "meaning": "Организации, владеющие данными",
+  "clean_name": "owner_institution_code",
+  "target_type": "category"
+ },
+ {
+  "column": "basisOfRecord",
+  "dtype": "str",
+  "missing": 0,
+  "unique": 1,
+  "memory_bytes": 41600000,
+  "meaning": "Способ получения записи; наблюдение прибора",
+  "clean_name": "basis_of_record",
+  "target_type": "category"
+ },
+ {
+  "column": "informationWithheld",
+  "dtype": "str",
+  "missing": 0,
+  "unique": 1,
+  "memory_bytes": 32000000,
+  "meaning": "Сведения о скрытой информации; отсылка к метаданным",
+  "clean_name": "information_withheld",
+  "target_type": "category"
+ },
+ {
+  "column": "dynamicProperties",
+  "dtype": "str",
+  "missing": 0,
+  "unique": 145,
+  "memory_bytes": 176919186,
+  "meaning": "JSON: номер прибора, место отлова, начало отслеживания",
+  "clean_name": "dynamic_properties",
+  "target_type": "string[pyarrow]"
+ },
+ {
+  "column": "occurrenceID",
+  "dtype": "str",
+  "missing": 0,
+  "unique": 1600000,
+  "memory_bytes": 42856021,
+  "meaning": "Идентификатор события; в выборке совпадает с id",
+  "clean_name": "occurrence_id",
+  "target_type": "string[pyarrow]"
+ },
+ {
+  "column": "sex",
+  "dtype": "str",
+  "missing": 190,
+  "unique": 2,
+  "memory_bytes": 21391254,
+  "meaning": "Пол птицы; анализ групп, допускается неизвестное значение",
+  "clean_name": "sex",
+  "target_type": "category"
+ },
+ {
+  "column": "lifeStage",
+  "dtype": "str",
+  "missing": 0,
+  "unique": 1,
+  "memory_bytes": 20800000,
+  "meaning": "Стадия жизни; характеристика птицы",
+  "clean_name": "life_stage",
+  "target_type": "category"
+ },
+ {
+  "column": "organismID",
+  "dtype": "str",
+  "missing": 0,
+  "unique": 145,
+  "memory_bytes": 24017576,
+  "meaning": "Идентификатор птицы; группировка траектории",
+  "clean_name": "organism_id",
+  "target_type": "category"
+ },
+ {
+  "column": "organismName",
+  "dtype": "str",
+  "missing": 0,
+  "unique": 145,
+  "memory_bytes": 21082301,
+  "meaning": "Имя птицы; свободный текст, не биологический признак",
+  "clean_name": "organism_name",
+  "target_type": "string[pyarrow]"
+ },
+ {
+  "column": "samplingProtocol",
+  "dtype": "str",
+  "missing": 0,
+  "unique": 1,
+  "memory_bytes": 78400000,
+  "meaning": "Ссылка на протокол измерений",
+  "clean_name": "sampling_protocol",
+  "target_type": "category"
+ },
+ {
+  "column": "samplingEffort",
+  "dtype": "str",
+  "missing": 0,
+  "unique": 3868,
+  "memory_bytes": 71390469,
+  "meaning": "JSON: интервал после предыдущего наблюдения, секунды",
+  "clean_name": "sampling_effort",
+  "target_type": "string[pyarrow]"
+ },
+ {
+  "column": "eventDate",
+  "dtype": "str",
+  "missing": 0,
+  "unique": 1599412,
+  "memory_bytes": 44800000,
+  "meaning": "Дата и время GPS-наблюдения, UTC",
+  "clean_name": "event_date",
+  "target_type": "datetime64[us, UTC]"
+ },
+ {
+  "column": "minimumElevationInMeters",
+  "dtype": "int64",
+  "missing": 0,
+  "unique": 1,
+  "memory_bytes": 12800000,
+  "meaning": "Минимальная отметка высоты, метры; в выборке постоянный ноль",
+  "clean_name": "minimum_elevation_in_meters",
+  "target_type": "Int32"
+ },
+ {
+  "column": "minimumDistanceAboveSurfaceInMeters",
+  "dtype": "float64",
+  "missing": 11,
+  "unique": 2416,
+  "memory_bytes": 12800000,
+  "meaning": "Измеренная высота над поверхностью, метры; требует проверки качества GPS",
+  "clean_name": "minimum_distance_above_surface_in_meters",
+  "target_type": "float64"
+ },
+ {
+  "column": "decimalLatitude",
+  "dtype": "float64",
+  "missing": 0,
+  "unique": 1115377,
+  "memory_bytes": 12800000,
+  "meaning": "Широта WGS84, градусы; пространственный анализ",
+  "clean_name": "decimal_latitude",
+  "target_type": "float64"
+ },
+ {
+  "column": "decimalLongitude",
+  "dtype": "float64",
+  "missing": 0,
+  "unique": 1166298,
+  "memory_bytes": 12800000,
+  "meaning": "Долгота WGS84, градусы; пространственный анализ",
+  "clean_name": "decimal_longitude",
+  "target_type": "float64"
+ },
+ {
+  "column": "geodeticDatum",
+  "dtype": "str",
+  "missing": 0,
+  "unique": 1,
+  "memory_bytes": 20800000,
+  "meaning": "Геодезическая система; совместимость координат",
+  "clean_name": "geodetic_datum",
+  "target_type": "category"
+ },
+ {
+  "column": "coordinateUncertaintyInMeters",
+  "dtype": "int64",
+  "missing": 0,
+  "unique": 169,
+  "memory_bytes": 12800000,
+  "meaning": "Неопределённость координат, метры; качество измерения",
+  "clean_name": "coordinate_uncertainty_in_meters",
+  "target_type": "Int32"
+ },
+ {
+  "column": "georeferenceSources",
+  "dtype": "str",
+  "missing": 0,
+  "unique": 1,
+  "memory_bytes": 17600000,
+  "meaning": "Источник геопривязки; GPS",
+  "clean_name": "georeference_sources",
+  "target_type": "category"
+ },
+ {
+  "column": "georeferenceVerificationStatus",
+  "dtype": "str",
+  "missing": 0,
+  "unique": 1,
+  "memory_bytes": 28800000,
+  "meaning": "Статус проверки геопривязки",
+  "clean_name": "georeference_verification_status",
+  "target_type": "category"
+ },
+ {
+  "column": "scientificName",
+  "dtype": "str",
+  "missing": 0,
+  "unique": 2,
+  "memory_bytes": 36137328,
+  "meaning": "Научное название вида; биологическая категория",
+  "clean_name": "scientific_name",
+  "target_type": "category"
+ },
+ {
+  "column": "kingdom",
+  "dtype": "str",
+  "missing": 0,
+  "unique": 1,
+  "memory_bytes": 25600000,
+  "meaning": "Царство; классификация вида",
+  "clean_name": "kingdom",
+  "target_type": "category"
+ },
+ {
+  "column": "taxonRank",
+  "dtype": "str",
+  "missing": 0,
+  "unique": 1,
+  "memory_bytes": 24000000,
+  "meaning": "Таксономический ранг; классификация вида",
+  "clean_name": "taxon_rank",
+  "target_type": "category"
+ },
+ {
+  "column": "vernacularName",
+  "dtype": "str",
+  "missing": 0,
+  "unique": 2,
+  "memory_bytes": 38788016,
+  "meaning": "Обиходное название вида; подписи и справочник",
+  "clean_name": "vernacular_name",
+  "target_type": "category"
+ }
+]

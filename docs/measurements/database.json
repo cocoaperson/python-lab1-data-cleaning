@@ -1,0 +1,151 @@
+{
+ "tables": {
+  "datasets": 1,
+  "species": 2,
+  "birds": 145,
+  "deployments": 145,
+  "observations": 1600000
+ },
+ "sqlite": {
+  "insert_seconds": 3.2708852000068873,
+  "version": "3.53.1",
+  "count": 1600000,
+  "aggregate_result": [
+   [
+    "Larus argentatus",
+    1034332,
+    15.566450840696456
+   ],
+   [
+    "Larus fuscus",
+    565668,
+    55.44014156713832
+   ]
+  ],
+  "date_result": 180,
+  "aggregate": {
+   "seconds": 0.7080265000695363,
+   "peak_mb": 861.896704,
+   "runs_seconds": [
+    0.7060571999754757,
+    0.7080265000695363,
+    0.7124245000304654
+   ],
+   "runs_peak_mb": [
+    861.876224,
+    861.896704,
+    861.9008
+   ]
+  },
+  "date_before": {
+   "seconds": 0.10226860002148896,
+   "peak_mb": 861.9008,
+   "runs_seconds": [
+    0.10226860002148896,
+    0.10209499998018146,
+    0.10235150007065386
+   ],
+   "runs_peak_mb": [
+    861.9008,
+    861.9008,
+    861.9008
+   ]
+  },
+  "date_after": {
+   "seconds": 9.700004011392593e-05,
+   "peak_mb": 861.954048,
+   "runs_seconds": [
+    0.00011939997784793377,
+    9.700004011392593e-05,
+    9.660003706812859e-05
+   ],
+   "runs_peak_mb": [
+    861.954048,
+    861.949952,
+    861.954048
+   ]
+  },
+  "indexed_plan": [
+   [
+    3,
+    0,
+    157,
+    "SEARCH observations USING COVERING INDEX idx_observations_date (event_date>? AND event_date<?)"
+   ]
+  ],
+  "storage_mb": 239.296512
+ },
+ "postgres": {
+  "insert_seconds": 29.31030830007512,
+  "version": "17.11",
+  "copy_seconds": 16.281137899961323,
+  "count": 1600000,
+  "aggregate_result": [
+   [
+    "Larus argentatus",
+    1034332,
+    15.566450840696456
+   ],
+   [
+    "Larus fuscus",
+    565668,
+    55.44014156713832
+   ]
+  ],
+  "date_result": 180,
+  "aggregate": {
+   "seconds": 0.1411374999443069,
+   "peak_mb": 861.896704,
+   "runs_seconds": [
+    0.14757189992815256,
+    0.14067710004746914,
+    0.1411374999443069
+   ],
+   "runs_peak_mb": [
+    861.896704,
+    861.896704,
+    861.896704
+   ]
+  },
+  "date_before": {
+   "seconds": 0.040290200035087764,
+   "peak_mb": 861.896704,
+   "runs_seconds": [
+    0.040290200035087764,
+    0.0403197999112308,
+    0.038463500095531344
+   ],
+   "runs_peak_mb": [
+    861.896704,
+    861.896704,
+    861.896704
+   ]
+  },
+  "date_after": {
+   "seconds": 0.0002454000059515238,
+   "peak_mb": 861.896704,
+   "runs_seconds": [
+    0.00025729998014867306,
+    0.0002454000059515238,
+    0.00022909999825060368
+   ],
+   "runs_peak_mb": [
+    861.892608,
+    861.896704,
+    861.896704
+   ]
+  },
+  "indexed_plan": [
+   [
+    "Aggregate  (cost=14.64..14.65 rows=1 width=8)"
+   ],
+   [
+    "  ->  Index Only Scan using idx_observations_date on observations  (cost=0.43..14.17 rows=187 width=0)"
+   ],
+   [
+    "        Index Cond: ((event_date >= '2014-01-01 00:00:00+00'::timestamp with time zone) AND (event_date < '2014-01-02 00:00:00+00'::timestamp with time zone))"
+   ]
+  ],
+  "storage_mb": 347.444915
+ }
+}

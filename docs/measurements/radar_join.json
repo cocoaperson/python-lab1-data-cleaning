@@ -1,0 +1,15 @@
+{
+ "tracks_before": 401254,
+ "site_rows": 41,
+ "unique_sites": 37,
+ "species_rows": 213,
+ "after": 401254,
+ "unmatched_sites": 6593,
+ "unmatched_species": 0,
+ "bad_site_numbers": {
+  "Latitude": 0,
+  "Longitude": 3,
+  "Altitude": 0
+ },
+ "note": "Повторные SiteCode — сезоны; координаты соединены с уникальными площадками. Не интерпретировать неизвестный SpeciesCode как пропуск всего наблюдения."
+}
