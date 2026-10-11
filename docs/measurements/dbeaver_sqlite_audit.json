@@ -1,0 +1,38 @@
+{
+  "created_by": "DBeaver graphical table and column editors",
+  "tables": {
+    "datasets": {
+      "columns": 16,
+      "rows": 1,
+      "foreign_keys": 0,
+      "load_seconds": 0.0005794999888166785
+    },
+    "species": {
+      "columns": 5,
+      "rows": 2,
+      "foreign_keys": 0,
+      "load_seconds": 5.819997750222683e-05
+    },
+    "birds": {
+      "columns": 5,
+      "rows": 145,
+      "foreign_keys": 1,
+      "load_seconds": 0.00021680002100765705
+    },
+    "deployments": {
+      "columns": 5,
+      "rows": 145,
+      "foreign_keys": 1,
+      "load_seconds": 0.00010649999603629112
+    },
+    "observations": {
+      "columns": 10,
+      "rows": 1600000,
+      "foreign_keys": 2,
+      "load_seconds": 4.304290400003083
+    }
+  },
+  "loaded_without_recreating_tables": true,
+  "foreign_key_check": "ok",
+  "integrity_check": "ok"
+}

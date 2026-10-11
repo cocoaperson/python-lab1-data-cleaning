@@ -1,0 +1,96 @@
+{
+  "method": "Tables copied through DBeaver constructor; foreign keys configured through GUI",
+  "counts": {
+    "datasets": 1,
+    "species": 2,
+    "birds": 145,
+    "deployments": 145,
+    "observations": 1600000
+  },
+  "constraints": [
+    [
+      "gui_lab.birds",
+      "f",
+      "FOREIGN KEY (species_pk) REFERENCES gui_lab.species(species_pk)"
+    ],
+    [
+      "gui_lab.birds",
+      "p",
+      "PRIMARY KEY (organism_id)"
+    ],
+    [
+      "gui_lab.datasets",
+      "p",
+      "PRIMARY KEY (dataset_pk)"
+    ],
+    [
+      "gui_lab.datasets",
+      "u",
+      "UNIQUE (dataset_id)"
+    ],
+    [
+      "gui_lab.deployments",
+      "f",
+      "FOREIGN KEY (organism_id) REFERENCES gui_lab.birds(organism_id)"
+    ],
+    [
+      "gui_lab.deployments",
+      "p",
+      "PRIMARY KEY (deployment_pk)"
+    ],
+    [
+      "gui_lab.observations",
+      "c",
+      "CHECK (((latitude >= ('-90'::integer)::double precision) AND (latitude <= (90)::double precision)))"
+    ],
+    [
+      "gui_lab.observations",
+      "c",
+      "CHECK (((longitude >= ('-180'::integer)::double precision) AND (longitude <= (180)::double precision)))"
+    ],
+    [
+      "gui_lab.observations",
+      "c",
+      "CHECK ((uncertainty_m >= 0))"
+    ],
+    [
+      "gui_lab.observations",
+      "f",
+      "FOREIGN KEY (dataset_pk) REFERENCES gui_lab.datasets(dataset_pk)"
+    ],
+    [
+      "gui_lab.observations",
+      "f",
+      "FOREIGN KEY (deployment_pk) REFERENCES gui_lab.deployments(deployment_pk)"
+    ],
+    [
+      "gui_lab.observations",
+      "p",
+      "PRIMARY KEY (observation_id)"
+    ],
+    [
+      "gui_lab.species",
+      "p",
+      "PRIMARY KEY (species_pk)"
+    ],
+    [
+      "gui_lab.species",
+      "u",
+      "UNIQUE (scientific_name)"
+    ]
+  ],
+  "load_seconds": 16.621573899989016,
+  "control": [
+    [
+      "Larus argentatus",
+      1034332,
+      15.566450840696456
+    ],
+    [
+      "Larus fuscus",
+      565668,
+      55.44014156713832
+    ]
+  ],
+  "day_count": 180
+}

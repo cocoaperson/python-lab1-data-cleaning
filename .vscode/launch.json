@@ -1,19 +1,19 @@
 {
- "version": "0.2.0",
- "configurations": [
-  {
-   "name": "Очистка отладочного среза",
-   "type": "debugpy",
-   "request": "launch",
-   "module": "src.pipeline",
-   "args": [
-    "--mode",
-    "debug",
-    "--output",
-    "data/processed/debug.parquet"
-   ],
-   "console": "integratedTerminal",
-   "justMyCode": true
-  }
- ]
+  "version": "0.2.0",
+  "configurations": [
+    {
+      "name": "Очистка отладочного среза",
+      "type": "debugpy",
+      "request": "launch",
+      "module": "src.pipeline",
+      "args": [
+        "--mode",
+        "debug",
+        "--output",
+        "data/processed/debug.parquet"
+      ],
+      "console": "internalConsole",
+      "justMyCode": true
+    }
+  ]
 }
