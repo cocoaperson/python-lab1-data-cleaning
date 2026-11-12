@@ -11,3 +11,9 @@ __pycache__/
 *.sqlite3
 
 .ruff_cache/
+
+plots/
+.cache/
+.jupyter/
+*.docx
+*.pdf
