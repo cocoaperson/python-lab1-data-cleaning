@@ -1,0 +1,83 @@
+{
+  "checks": {
+    "clean_matches_lr1": true,
+    "all_raw_files_match_lr1_manifest": true,
+    "shape": true,
+    "figure_represents_all_valid_values": true,
+    "figure_iqr_count": true,
+    "figure_negative_count": true,
+    "figure_intersection_count": true,
+    "iqr_matches_lr1": true,
+    "negative_matches_lr1": true,
+    "all_cells_executed": true,
+    "no_execution_errors": true,
+    "six_embedded_figures": true,
+    "six_pngs": true,
+    "figure_at_cell_5_has_markdown_conclusion": true,
+    "figure_at_cell_8_has_markdown_conclusion": true,
+    "figure_at_cell_13_has_markdown_conclusion": true,
+    "figure_at_cell_18_has_markdown_conclusion": true,
+    "figure_at_cell_23_has_markdown_conclusion": true,
+    "figure_at_cell_28_has_markdown_conclusion": true,
+    "same_metric_values": true,
+    "benchmark_sample_size": true,
+    "benchmark_protocol": true,
+    "monthly_complete_calendar": true,
+    "monthly_total": true,
+    "group_total": true,
+    "group_missing_total": true
+  },
+  "raw": [
+    {
+      "file": "inbo_gull_gps_tracking_1gb.csv",
+      "matches_lr1_manifest": true,
+      "sha256": "0a87042e039e90c7ff16d92f732f9d26d98eec0e653b65f61f38c3c45682ef77"
+    },
+    {
+      "file": "radar_site.csv",
+      "matches_lr1_manifest": true,
+      "sha256": "4563d863931c2db1a12b563f9b5d0ee46ba92c27881eea1ac8327307cf3ffa9c"
+    },
+    {
+      "file": "radar_species.csv",
+      "matches_lr1_manifest": true,
+      "sha256": "3d515ac9e1370f9e87c294472c6bfd3e7514e100ba879df5188968530ad3c80d"
+    },
+    {
+      "file": "radar_track.csv",
+      "matches_lr1_manifest": true,
+      "sha256": "c5c7a0e5523fd5168833824cf53702fbc4148302451b9c3ba1095865592b6717"
+    }
+  ],
+  "rows": 1600000,
+  "columns": 39,
+  "code_cells": 14,
+  "anomaly_counts": [
+    {
+      "rule": "1.5 IQR",
+      "count": 186965,
+      "fraction": 0.116853125,
+      "overlap": 9646
+    },
+    {
+      "rule": "Высота < 0 м",
+      "count": 363699,
+      "fraction": 0.227311875,
+      "overlap": 9646
+    },
+    {
+      "rule": "Пересечение",
+      "count": 9646,
+      "fraction": 0.00602875,
+      "overlap": 9646
+    }
+  ],
+  "only_iqr": 177319,
+  "only_negative": 354053,
+  "union": 541018,
+  "birds_by_species": {
+    "Larus argentatus": 37,
+    "Larus fuscus": 108
+  },
+  "source_sha256": "05eb88e9217b146a80734a791eff8b7c88100cce5c7ffb0b1f25fdf6564ee9b3"
+}

@@ -126,6 +126,12 @@ def anomaly_rules(values):
                 "fraction": float(negative.mean()),
                 "overlap": overlap,
             },
+            {
+                "rule": "Пересечение",
+                "count": overlap,
+                "fraction": overlap / len(values),
+                "overlap": overlap,
+            },
         ]
     )
     return {"iqr": iqr, "negative": negative}, table, (float(lower), float(upper))
@@ -310,12 +316,32 @@ def plot_heatmap(pivot, folder):
     return save_figure(fig, folder, "05_heatmap.png")
 
 
+def anomaly_frequencies(frame, masks):
+    """Частоты высот по готовым маскам; пороги здесь не пересчитываются."""
+    for name in ("iqr", "negative"):
+        mask = masks[name]
+        if not isinstance(mask, pd.Series) or not mask.index.equals(frame.index):
+            raise ValueError("Маска должна иметь длину и индекс исходной таблицы")
+        if not pd.api.types.is_bool_dtype(mask) or mask.isna().any():
+            raise ValueError("Маска должна содержать только булевы значения без пропусков")
+    category = masks["iqr"].astype("int8") + 2 * masks["negative"].astype("int8")
+    return (
+        frame[[TARGET]]
+        .assign(category=category)
+        .dropna(subset=[TARGET])
+        .groupby([TARGET, "category"], observed=True)
+        .size()
+        .rename("count")
+        .reset_index()
+    )
+
+
 def plot_anomalies(frame, masks, bounds, folder):
     # Все значения представлены частотами, без случайной подвыборки.
-    values, counts = np.unique(frame[TARGET].dropna(), return_counts=True)
-    categories = ((values < bounds[0]) | (values > bounds[1])).astype(int) + 2 * (
-        values < 0
-    ).astype(int)
+    frequencies = anomaly_frequencies(frame, masks)
+    values = frequencies[TARGET].to_numpy()
+    counts = frequencies["count"].to_numpy()
+    categories = frequencies["category"].to_numpy()
     fig, axes = plt.subplots(1, 2, figsize=(10, 4.2), layout="constrained")
     colors = ["#77919c", "#c55535", "#c89b24", "#754b92"]
     names = ["Не отмечены", "Только IQR", "Только < 0 м", "Оба правила"]
@@ -337,7 +363,7 @@ def plot_anomalies(frame, masks, bounds, folder):
 def observations(frame, summary, series, groups, pivot, anomalies, bounds):
     missing_cells = int(pivot.isna().sum().sum())
     peak = series["count"].idxmax()
-    iqr_n, negative_n = map(int, anomalies["count"])
+    iqr_n, negative_n = map(int, anomalies["count"].iloc[:2])
     outside = int((~frame[TARGET].between(-100, 300) & frame[TARGET].notna()).sum())
     peak_group, peak_month = pivot.stack().idxmax()
     peak_median = pivot.loc[peak_group, peak_month]

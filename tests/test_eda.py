@@ -9,6 +9,7 @@ from src.eda import (
     DATE,
     GROUP,
     TARGET,
+    anomaly_frequencies,
     anomaly_rules,
     chart_groups,
     group_summary,
@@ -57,12 +58,25 @@ class EdaTests(unittest.TestCase):
         masks, table, bounds = anomaly_rules(values)
         self.assertEqual(bounds, (0.0, 0.0))
         self.assertEqual(len(masks["iqr"]), len(values))
-        self.assertEqual(table["count"].tolist(), [2, 1])
-        self.assertEqual(table["overlap"].tolist(), [1, 1])
+        self.assertEqual(table["count"].tolist(), [2, 1, 1])
+        self.assertEqual(table["overlap"].tolist(), [1, 1, 1])
         self.assertFalse(masks["iqr"].iloc[-1])
         self.assertFalse(masks["iqr"].iloc[0])
         x = values.dropna().to_numpy()
         self.assertAlmostEqual(mean_python(x), mean_numpy(x), places=12)
+
+    def test_plot_uses_supplied_masks(self):
+        # Даже отрицательные значения не должны переклассифицироваться в рисунке.
+        mask = pd.Series(False, index=self.frame.index)
+        freq = anomaly_frequencies(self.frame, {"iqr": mask, "negative": mask})
+        self.assertEqual(freq["category"].unique().tolist(), [0])
+        self.assertEqual(int(freq["count"].sum()), 3)
+        marked = mask.copy()
+        marked.iloc[0] = True
+        freq = anomaly_frequencies(self.frame, {"iqr": marked, "negative": marked})
+        self.assertEqual(freq.loc[freq[TARGET] == 0, "category"].item(), 3)
+        with self.assertRaises(ValueError):
+            anomaly_frequencies(self.frame, {"iqr": mask.iloc[:-1], "negative": mask})
 
 
 if __name__ == "__main__":
